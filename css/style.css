@@ -846,7 +846,7 @@ h3.my-profession
     height: 50px;
     padding: 0 50px;
 }
- @media(max-width:1154px)
+@media(max-width:1154px)
 {
     .section .container
     {
@@ -916,7 +916,7 @@ h3.my-profession
         max-width: 100%;
     }
 }
-@media(max-width:990px)
+@media(max-width:562px)
 {
     .portfolio .portfolio-item
     {
@@ -928,4 +928,68 @@ h3.my-profession
 }
 
 
+form{
+
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    /* margin-inline: 25%; */
+}
+form input,form textarea
+{
+    border: 0;
+    margin: 10px 0;
+    padding: 15px;
+    outline: none;
+    background: white;
+    font-size: 15px;
+    border-radius: 50px;
+}
+form textarea
+{
+    border-radius: 20px;
+}
+form button
+{
+    padding: 15px;
+    background: var(--skin-color);
+    color: #fff;
+    font-size: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 200px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+    /* color: #fff; */
+    transition: background 0.5s;
+}
+form button:hover
+{
+    background: #0c0004;
+    transform: scale(1.05);
+}
+@media(min-width:751px)
+{
+    .contact form
+    {
+        flex: 0 0 50%;
+        max-width: 75%;
+        margin-inline: 15%;
+        
+    }
+}
+@media(max-width:1154px)
+{
+    .contact .form
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
 

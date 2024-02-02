@@ -163,7 +163,7 @@
                                                     <h3 class="timeline-date">
                                                         <i class="fa fa-calendar"></i> 2019 - 2022
                                                     </h3>
-                                                    <h4 class="timeline-title"> Bachelor Of Technology</h4>
+                                                    <h4 class="timeline-title"> B.Tech</h4>
                                                     <p class="timeline-text">Information Technology</p>
                                                 </div>
                                                 
@@ -426,8 +426,8 @@
                     <!-- <h4 class="contact-sub-title">I'M AT YOUR SERVICES</h4> -->
                     <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
                     <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
-                    <!-- ====== Contact Form ======= -->
-                    <div class="row">
+                    <!-- ====== Contact Form ======= -->                        
+                    <!--<div class="row">
                         <div class="contact-form padd-15">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
@@ -461,7 +461,49 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
+
+                    <form action="">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="email" id="email" placeholder="Email id" required>
+                        <input type="text" id="subject" placeholder="Subject" required>
+                        <textarea id="message" rows="4" placeholder="Message"></textarea>
+                        <button type="button" onclick="Send()">Send Message</button>
+                    </form>
+                    <script src="https://smtpjs.com/v3/smtp.js"></script>
+                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+                    <script>
+                        function Send(){
+                            var name = document.getElementById("name").value;
+                            var email = document.getElementById("email").value;
+                            var subject = document.getElementById("subject").value;
+                            var message = document.getElementById("message").value;
+
+                            var body = "name: " + name + "<br/> email:" + email + "<br/> subject:" + subject + "<br/> message:" + message;
+
+                            console.log(body);
+
+                            Email.send({
+                                SecureToken : "b2a44ea1-cc20-44f2-8dc4-6d01298e324e",
+                                To : 'prajaktaranewad99@gmail.com',
+                                From : "prajaktaranewad99@gmail.com",
+                                Subject : subject,
+                                Body : body
+                            }).then(
+                                message => {
+                                    if(message=='OK'){
+                                        swal("Successfull", "Your Data Successfull Received", "success");
+                                    }
+                                    else
+                                    {
+                                        swal("Something Wrong", "Your Data is not Successfull Received", "error");
+
+                                    }
+                                }
+                            );
+                        }
+                    </script>
                 </div>
             </section>
             <!-- ===== Contact Section End ======-->
@@ -490,6 +532,7 @@
     <!-- ====== Style Switcher End ======== -->
 
     <!-- ===== JS File ====== -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" 
     integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" 
     referrerpolicy="no-referrer"></script>
